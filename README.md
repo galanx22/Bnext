@@ -120,4 +120,15 @@ De todas formas, con los datos que disponemos solo podemos interpretar los 3 ó 
 Para poder realizar esta prueba técnica he utilizado las siguientes herramientas:
 
 - Python: Podéis ver todos los pasos y cálculos que he realizado [aquí](https://github.com/galanx22/Bnext/blob/master/Prueba_técnica_BNEXT.ipynb) (a veces la previsualización no se carga por el tamaño del archivo, si se da este caso recomiendo descargarlo y abrirlo con Jupyter Notebook)
-- Tableau: Aprovechando que trabajáis mucho con Tableau he representado los gráficos para que podáis verlos e interactuar con ellos. Pinche [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/ClustersOutliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link) para visualizarlos (hay 3 pestañas).
+- Tableau: Aprovechando que trabajáis mucho con Tableau, he querido representar los gráficos para que podáis verlos e interactuar con ellos. Pinche [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/ClustersOutliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link) para visualizarlos (hay 3 pestañas).
+
+#### Atención 
+
+Tableau también utiliza el método K-means para clusterizar, sin embargo, la clusterización de Tableau es distinta a la que he realizado con Python. He probado a estandarizar las variables para ver si hacía coincidir ambas gráficas pero no he podido. Esto se debe a las diferencias en la implementación del algoritmo, ya que no hay una respuesta única, mecánica y correcta al problema planteado. 
+En mi opinión, deberíamos estudiar cual de las dos opciones es más conveniente para Bnext y cual tiene una mayor compatibilidad con el resto de análisis de clientes.
+
+##### Interpretación clusterización Tableau
+
+- Cluster 1: Es el cluster más pequeño. Representa a los clientes que realizan 2 o más operaciones diarias pero la mayoria de los importes de dichas operaciones no superan los 500 €. El importe máximo de gasto de este cluster es de 2000€ (este importe está generado por outliers)
+- Cluster 2 : Este cluster es el más númeroso, por lo que representa a la mayoría de los clientes de Bnext. Realizan entre 1 y 2 operaciones diarias cuyo importe medio por operación ronda los 1000€. El intervalo de gasto va desde poco mas de 0€ hasta los 8000€ (importe generado por outliers).
+- Cluster 3: Este clúster también es muy numeroso, y representa a los clientes de Bnext que realizan de 0 a 1 gasto diario. Estos clientes tambien tienen un importe medio de operación que ronda los 1000€, sin embargo el gasto máximo esta en 12.000€ (importe generado opr outliers). La gran diferencia con el cluster 2 es el número de operaciones diarias, porque si quitasemos los outliers la cantidad de gasto sería muy similar.
