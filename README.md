@@ -120,7 +120,7 @@ De todas formas, con los datos que disponemos solo podemos interpretar los 3 ó 
 Para poder realizar esta prueba técnica he utilizado las siguientes herramientas:
 
 - Python: Podéis ver todos los pasos y cálculos que he realizado [aquí](https://github.com/galanx22/Bnext/blob/master/Prueba_técnica_BNEXT.ipynb) (a veces la previsualización no se carga por el tamaño del archivo, si se da este caso recomiendo descargarlo y abrirlo con Jupyter Notebook)
-- Tableau: Aprovechando que trabajáis mucho con Tableau, he querido representar los gráficos para que podáis verlos e interactuar con ellos. Pinche [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/ClustersOutliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link) para visualizarlos (hay 3 pestañas).
+- Tableau: Aprovechando que trabajáis mucho con Tableau, he querido representar los gráficos para que podáis verlos e interactuar con ellos. Pinche [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/Outliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link) para visualizarlos (hay 3 pestañas).
 
 #### Atención 
 
