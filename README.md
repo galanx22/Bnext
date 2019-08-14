@@ -1,6 +1,15 @@
 # BNEXT - Prueba técnica
 
-En este documento se explican los cálculos realizados para contestar a cada supuesto, y se exponen las interpretaciones de los resultados.
+En este documento se explican los cálculos realizados y las herramientas utilizadas para contestar a cada supuesto. También se exponen las interpretaciones de los resultados.
+
+
+### RECURSOS
+
+Para poder realizar esta prueba técnica he utilizado las siguientes herramientas:
+
+- Python: Podéis ver todos los pasos y cálculos que he realizado [aquí](https://github.com/galanx22/Bnext/blob/master/Prueba_técnica_BNEXT.ipynb) (a veces la previsualización no se carga por el tamaño del archivo, si se da este caso recomiendo descargarlo y abrirlo con Jupyter Notebook).
+- Tableau: Aprovechando que trabajáis mucho con Tableau, he querido generar las gráficas para que podáis verlos e interactuar con ellos. He creado un dashboard para cada una de las preguntas. Veréis el link al final de cada respuesta.
+
 
 ### PREGUNTA 1: 
 #### La primera pregunta tiene que ver con los usuarios que han gastado en este periodo. ¿Se te ocurre alguna manera de agrupar a los usuarios en función de su valor? Explica por favor la razón de agruparlos de la manera elegida y los cálculos que has realizado para ello.
@@ -28,6 +37,18 @@ Como podemos ver en el gráfico, hemos clasificado a los clientes en 3 clusters 
 - El cluster nº2 es el más importante. Es el clúster más numeroso y representa a todos los clientes que realizan varias compras diarias cuya cantidad siempre es igual o superior a los 500€. Este cluster es de suma importancia ya que representa a la gran parte de clientes de Bnext. Observamos que la mayoria de los clientes realizan entre 0 y 3 compras diarias con cantidades que oscilan entre los 500 y 1200€. 
 - El cluster nº3 es el más reducido. Se trata de aquellos clientes que realizan entre 0 y 2 compras diarias pero gastan cantidades muy altas de dinero
 
+Para ver la gráfica en Tableau, haga click [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/Outliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link).
+
+#### Atención 
+
+Tableau también utiliza el método K-means para clusterizar, sin embargo, la clusterización de Tableau es distinta a la que he realizado con Python. He probado a estandarizar las variables para ver si hacía coincidir ambas gráficas pero Tableau seguí mostrandome el mismo resultado. Esto se debe a las diferencias en la implementación del algoritmo, ya que no hay una respuesta única, mecánica y correcta al problema planteado. 
+En mi opinión, deberíamos estudiar cual de las dos opciones es más conveniente para Bnext y cual tiene una mayor compatibilidad con el resto de estudios sobre los clientes.
+
+##### Interpretación clusterización Tableau
+
+- Cluster 1: Es el cluster más pequeño. Representa a los clientes que realizan 2 o más operaciones diarias pero la mayoria de los importes de dichas operaciones no superan los 500 €. El importe máximo de gasto de este cluster es de 2000€ (este importe está generado por outliers)
+- Cluster 2 : Este cluster es el más númeroso, por lo que representa a la mayoría de los clientes de Bnext. Realizan entre 1 y 2 operaciones diarias cuyo importe medio por operación ronda los 1000€. El intervalo de gasto va desde poco mas de 0€ hasta los 8000€ (importe generado por outliers).
+- Cluster 3: Este clúster también es muy numeroso, y representa a los clientes de Bnext que realizan de 0 a 1 gasto diario. Estos clientes tambien tienen un importe medio de operación que ronda los 1000€, sin embargo el gasto máximo esta en 12.000€ (importe generado opr outliers). La gran diferencia con el cluster 2, es el número de operaciones diarias, ya que si quitasemos los outliers la cantidad de gasto sería muy similar.
 
 
 ### PREGUNTA 2:
@@ -70,7 +91,7 @@ Sin embargo vemos como entre el día 30/11/2018 y el día 1/12/2018 los ingresos
 
 De hecho me aventuraría a decir, que si tuviesemos los datos de los primeros días de diciembre podríamos ver como la evolución sigue siendo positiva por lo menos hasta el día 10/01(sigue siendo periodo de cobro de salarios). 
 
-
+Para ver las gráficas en Tableau, haga click [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/Outliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link).
 
 ### Pregunta 3: 
 #### Busca el concepto de cohorte si no estás familiarizadx con él, y realiza un análisis de cohortes diarias. Puedes considerar que la primera transacción de cada usuario en la muestra fue su primera transacción en Bnext. 
@@ -113,22 +134,5 @@ Esto puede deberse a diversos factores, como el método de captación de usuario
 
 De todas formas, con los datos que disponemos solo podemos interpretar los 3 ó 4 primero cohortes, y en estos no se puede concluir que exista ni un ascenso ni un descenso significativo del uso de la aplicación. Necesitaríamos más datos sobre la evolución de los cohortes para determinar la retención de clientes.
 
+Para ver la gráfica en Tableau, haga click [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/Outliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link).
 
-
-### RECURSOS
-
-Para poder realizar esta prueba técnica he utilizado las siguientes herramientas:
-
-- Python: Podéis ver todos los pasos y cálculos que he realizado [aquí](https://github.com/galanx22/Bnext/blob/master/Prueba_técnica_BNEXT.ipynb) (a veces la previsualización no se carga por el tamaño del archivo, si se da este caso recomiendo descargarlo y abrirlo con Jupyter Notebook)
-- Tableau: Aprovechando que trabajáis mucho con Tableau, he querido representar los gráficos para que podáis verlos e interactuar con ellos. Pinche [aquí](https://eu-west-1a.online.tableau.com/t/galanx/views/Bnextgrficos/Outliers?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link) para visualizarlos (hay 3 pestañas).
-
-#### Atención 
-
-Tableau también utiliza el método K-means para clusterizar, sin embargo, la clusterización de Tableau es distinta a la que he realizado con Python. He probado a estandarizar las variables para ver si hacía coincidir ambas gráficas pero no he podido. Esto se debe a las diferencias en la implementación del algoritmo, ya que no hay una respuesta única, mecánica y correcta al problema planteado. 
-En mi opinión, deberíamos estudiar cual de las dos opciones es más conveniente para Bnext y cual tiene una mayor compatibilidad con el resto de análisis de clientes.
-
-##### Interpretación clusterización Tableau
-
-- Cluster 1: Es el cluster más pequeño. Representa a los clientes que realizan 2 o más operaciones diarias pero la mayoria de los importes de dichas operaciones no superan los 500 €. El importe máximo de gasto de este cluster es de 2000€ (este importe está generado por outliers)
-- Cluster 2 : Este cluster es el más númeroso, por lo que representa a la mayoría de los clientes de Bnext. Realizan entre 1 y 2 operaciones diarias cuyo importe medio por operación ronda los 1000€. El intervalo de gasto va desde poco mas de 0€ hasta los 8000€ (importe generado por outliers).
-- Cluster 3: Este clúster también es muy numeroso, y representa a los clientes de Bnext que realizan de 0 a 1 gasto diario. Estos clientes tambien tienen un importe medio de operación que ronda los 1000€, sin embargo el gasto máximo esta en 12.000€ (importe generado opr outliers). La gran diferencia con el cluster 2 es el número de operaciones diarias, porque si quitasemos los outliers la cantidad de gasto sería muy similar.
