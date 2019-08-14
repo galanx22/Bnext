@@ -37,7 +37,7 @@ Para resolver esta pregunta, vamos a representar la evolución de las categoría
 
 Para la representación de estos datos he escogido un gráfico de línea, para que cualquier persona pueda entender y visualizar los outliers.
 
-#### Evolución de los ingresos
+#### - Evolución de los ingresos
 
 ![alt text](https://github.com/galanx22/Bnext/blob/master/Imágenes/Income%20Evolution.PNG)
 
@@ -53,7 +53,7 @@ Además, el Black Friday es un día donde las compras online son mucho mayores, 
 También podemos apreciar una caída de las compras entre el 30/11 y el 01/12, que se debe a la falta de datos para el primer día de diciembre, ya que solo disponemos de datos hasta las 8 de la mañana.
 
 
-#### Evolución de los gastos
+#### - Evolución de los gastos
 
 ![alt text](https://github.com/galanx22/Bnext/blob/master/Imágenes/Puchases%20evolution.PNG)
 
